@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | XYZ Wizard</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/index.html" class="logo">
+        <img src="assets/images/logo-pixel-wizard.png" alt="XYZ Wizard">
+      </a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="/shop.html">Shop &amp; Services</a></li>
+          <li><a href="/gallery.html">Gallery</a></li>
+          <li><a href="/how-it-works.html">How It Works</a></li>
+          <li><a href="/pricing-faq.html">Pricing &amp; FAQs</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/contact.html" class="active">Contact</a></li>
+        </ul>
+      </nav>
+      <a href="/quote.html" class="btn-secondary">Get a Quote</a>
+      <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <p>Have questions? Send us a message and we'll get back to you.</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="contact container">
+    <form class="contact-form" action="/contact-submit" method="POST">
+      <label>
+        Name
+        <input type="text" name="name" required>
+      </label>
+      <label>
+        Email
+        <input type="email" name="email" required>
+      </label>
+      <label>
+        Subject
+        <input type="text" name="subject">
+      </label>
+      <label>
+        Message
+        <textarea name="message" rows="5" required></textarea>
+      </label>
+      <button type="submit" class="btn-primary">Send Message</button>
+    </form>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2025 XYZ Wizard</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
