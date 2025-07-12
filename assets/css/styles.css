@@ -542,4 +542,52 @@ form button:hover {
   }
 }
 
+/* Carousel */
+.hero-carousel {
+  position: relative;
+  overflow: hidden;
+}
+.carousel-slides {
+  position: relative;
+}
+.carousel-item {
+  display: none;
+  position: relative;
+}
+.carousel-item.active {
+  display: block;
+}
+.carousel-item img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.carousel-caption {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-family: var(--font-base);
+}
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  border: none;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border-radius: 50%;
+  line-height: 1;
+}
+.carousel-control.prev { left: 1rem; }
+.carousel-control.next { right: 1rem; }
+
+
 
