@@ -8,10 +8,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const data = new FormData(form);
     try {
-      const res = await fetch('https://api.xyzwizard.com/upload-quote', {
+      const res =await fetch('https://api.xyzwizard.com/upload-quote', {
         method: 'POST',
-        body: data
-      });
+        mode: 'cors',                        // explicitly allow cross-origin
+        headers: { /* no need to set Content-Type for FormData */ },
+        body: new FormData(formElement)
+        });
+
       if (res.ok) {
         window.location.href = '/thank-you.html';
       } else {
