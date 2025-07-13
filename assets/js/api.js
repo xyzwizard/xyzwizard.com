@@ -6,20 +6,20 @@ document.addEventListener('DOMContentLoaded', () => {
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
+    // ← use the `form` variable you defined above, not formElement
     const data = new FormData(form);
-    try {
-      const res =await fetch('https://api.xyzwizard.com/upload-quote', {
-        method: 'POST',
-        mode: 'cors',                        // explicitly allow cross-origin
-        headers: { /* no need to set Content-Type for FormData */ },
-        body: new FormData(formElement)
-        });
 
+    try {
+      const res = await fetch('https://api.xyzwizard.com/upload-quote', {
+        method: 'POST',
+        mode: 'cors',
+        body: data
+      });
       if (res.ok) {
         window.location.href = '/thank-you.html';
       } else {
-        const text = await res.text();
-        alert('Submission failed: ' + text);
+        const payload = await res.json().catch(() => ({ error: 'Unknown error' }));
+        alert('Submission failed: ' + JSON.stringify(payload));
       }
     } catch (err) {
       console.error(err);
