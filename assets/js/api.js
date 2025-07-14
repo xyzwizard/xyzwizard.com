@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // instead of overlay.hidden = false:
     overlay.classList.add('show');
     // instead of overlay.hidden = true:
-    overlay.classList.remove('show');
+    
 
     submitBtn.disabled = true;
 
@@ -40,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // hide loader, re-enable button (in case of error)
       overlay.hidden = true;
       submitBtn.disabled = false;
+      overlay.classList.remove('show');
     }
   });
 });
