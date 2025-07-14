@@ -3,10 +3,17 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.querySelector('.quote-form');
+  const overlay = document.getElementById('loadingOverlay');
+  const submitBtn = form && form.querySelector('.submit-btn');
+
   if (!form) return;
 
-  form.addEventListener('submit', async (e) => {
+  form.addEventListener('submit', async e => {
     e.preventDefault();
+
+    // show loader, disable button
+    overlay.hidden = false;
+    submitBtn.disabled = true;
 
     const formData = new FormData(form);
     try {
@@ -19,17 +26,16 @@ document.addEventListener('DOMContentLoaded', () => {
       if (response.ok) {
         window.location.href = '/thank-you.html';
       } else {
-        let errorInfo;
-        try {
-          errorInfo = await response.json();
-        } catch (_) {
-          errorInfo = { error: 'Unknown server error' };
-        }
+        const errorInfo = await response.json().catch(() => ({ error: 'Unknown error' }));
         alert('Submission failed: ' + JSON.stringify(errorInfo));
       }
     } catch (err) {
       console.error('Fetch error:', err);
       alert('Network error: ' + err.message);
+    } finally {
+      // hide loader, re-enable button (in case of error)
+      overlay.hidden = true;
+      submitBtn.disabled = false;
     }
   });
 });
