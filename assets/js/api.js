@@ -1,4 +1,6 @@
 // assets/js/api.js
+// AJAX form submit for quote form
+
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.querySelector('.quote-form');
   if (!form) return;
@@ -6,23 +8,27 @@ document.addEventListener('DOMContentLoaded', () => {
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    // ← use the `form` variable you defined above, not formElement
-    const data = new FormData(form);
-
+    const formData = new FormData(form);
     try {
-      const res = await fetch('https://api.xyzwizard.com/upload-quote', {
+      const response = await fetch('https://api.xyzwizard.com/upload-quote', {
         method: 'POST',
         mode: 'cors',
-        body: data
+        body: formData
       });
-      if (res.ok) {
+
+      if (response.ok) {
         window.location.href = '/thank-you.html';
       } else {
-        const payload = await res.json().catch(() => ({ error: 'Unknown error' }));
-        alert('Submission failed: ' + JSON.stringify(payload));
+        let errorInfo;
+        try {
+          errorInfo = await response.json();
+        } catch (_) {
+          errorInfo = { error: 'Unknown server error' };
+        }
+        alert('Submission failed: ' + JSON.stringify(errorInfo));
       }
     } catch (err) {
-      console.error(err);
+      console.error('Fetch error:', err);
       alert('Network error: ' + err.message);
     }
   });
