@@ -12,7 +12,11 @@ document.addEventListener('DOMContentLoaded', () => {
     e.preventDefault();
 
     // show loader, disable button
-    overlay.hidden = false;
+    // instead of overlay.hidden = false:
+    overlay.classList.add('show');
+    // instead of overlay.hidden = true:
+    overlay.classList.remove('show');
+
     submitBtn.disabled = true;
 
     const formData = new FormData(form);
