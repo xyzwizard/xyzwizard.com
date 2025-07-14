@@ -631,10 +631,15 @@ form button:hover {
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
-/* Let the hidden attribute still hide the overlay */
-.loading-overlay[hidden] {
-  display: none !important;
+/* Default hidden */
+.loading-overlay {
+  display: none;
+  /* …all your other styles here… */
 }
 
+/* Visible when .show is present */
+.loading-overlay.show {
+  display: flex;
+}
 
 
