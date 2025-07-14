@@ -589,5 +589,18 @@ form button:hover {
 .carousel-control.prev { left: 1rem; }
 .carousel-control.next { right: 1rem; }
 
+/* === Thank-You Page Overrides === */
+.page-hero {
+  /* a bit more vertical padding on thank-you page */
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.page-hero .btn-primary {
+  /* push the button down below the paragraph */
+  display: inline-block;
+  margin-top: 1.5rem;
+}
+
 
 
