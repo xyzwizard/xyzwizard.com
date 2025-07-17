@@ -1,6 +1,40 @@
 /* Import modern fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Cinzel:ital,wght@0,400;1,400&display=swap');
 
+/* in assets/css/styles.css, right at the top */
+html, body {
+  overflow-x: hidden;
+}
+
+/* Mobile nav: hide the full menu, show the toggle */
+@media only screen and (max-width: 1368px) {
+  .site-header .main-nav {
+    display: none;
+  }
+  .site-header .nav-toggle {
+    display: inline-block;
+  }
+
+  /* When `.open` is on the header, show the menu vertically */
+  .site-header.open .main-nav {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;       /* or your header bg */
+    padding: 1rem 0;
+    text-align: center;
+  }
+  .site-header.open .main-nav ul {
+    list-style: none;
+    margin: 0; padding: 0;
+  }
+  .site-header.open .main-nav li {
+    margin: 0.5rem 0;
+  }
+}
+
 :root {
   --font-base: 'Inter', sans-serif;
   --font-heading: 'Cinzel', serif;
