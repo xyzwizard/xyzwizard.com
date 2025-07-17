@@ -700,19 +700,37 @@ form button:hover {
   }
 }
 /* Force carousel captions below the image */
-.carousel-item figure {
-  position: static !important;    /* cancel any absolute positioning */
+/* Carousel Caption Below Image Override */
+.carousel-item figure,
+.gallery-item figure {
+  position: static !important;
 }
-.carousel-item img {
-  display: block;                 /* so caption sits on its own line */
-  width: 100%;
-  height: auto;
+
+.carousel-item img,
+.gallery-item img {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
 }
-.carousel-item figcaption {
+
+.carousel-item figcaption,
+.gallery-item figcaption {
   position: static !important;
   background: transparent !important;
   color: #333 !important;
-  margin-top: 0.5rem;
-  padding: 0;                     /* remove any overlay padding */
-  text-align: center;             /* or left, as you prefer */
+  margin-top: 0.5rem !important;
+  padding: 0 !important;
+  text-align: center !important;
+  display: block !important;
+}
+
+/* Ensure carousel-item container allows caption below */
+.carousel-item {
+  overflow: visible !important;
+}
+
+/* If using slick or other slider, ensure captions aren't absolutely positioned by JS */
+.slick-slide figure,
+.carousel-item figure {
+  position: static !important;
 }
