@@ -1,6 +1,12 @@
 /* Import modern fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Cinzel:ital,wght@0,400;1,400&display=swap');
 
+/* ensure hamburger is always clickable */
+.nav-toggle {
+  position: relative;
+  z-index: 1001;
+}
+
 /* in assets/css/styles.css, right at the top */
 html, body {
   overflow-x: hidden;
