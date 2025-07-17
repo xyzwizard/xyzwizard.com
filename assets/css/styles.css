@@ -1008,18 +1008,20 @@ form button:hover {
   }
 }
 
-/* ─── Sliding Mobile Nav & Caption Override (≤1440px) ─── */
 @media only screen and (max-width: 1440px) {
-  /* 1️⃣ Always keep the hamburger on top and clickable */
+  /* Always keep the hamburger on top and clickable */
   .nav-toggle {
     display: block !important;
-    position: relative !important;
-    z-index: 1001 !important;
+    position: fixed !important;
+    top: 1rem !important;
+    right: 1rem !important;
+    z-index: 1100 !important;
+    pointer-events: auto !important;
   }
 
-  /* 2️⃣ Slide the nav offscreen by default */
+  /* Slide the nav offscreen by default and disable its pointer events */
   .site-header .main-nav {
-    display: flex !important;              /* use flex so links stack nicely */
+    display: flex !important;
     flex-direction: column !important;
     position: fixed   !important;
     top: 0             !important;
@@ -1027,18 +1029,20 @@ form button:hover {
     width: 75%        !important;
     max-width: 300px  !important;
     height: 100%      !important;
-    background: #0057b8 !important;        /* match your header blue */
-    padding-top: 3rem !important;          /* push links below header */
-    overflow-y: auto !important;
-    transition: left 0.3s ease !important; /* animate the slide */
+    background: #0057b8 !important;
+    padding-top: 3rem !important;
+    overflow-y: auto  !important;
+    transition: left 0.3s ease !important;
+    pointer-events: none !important;
   }
 
-  /* 3️⃣ Slide it back in when .open is toggled */
+  /* Slide it back in when .open is toggled and re-enable pointer events */
   .site-header.open .main-nav {
     left: 0 !important;
+    pointer-events: auto !important;
   }
 
-  /* 4️⃣ Style the mobile menu links */
+  /* Style the mobile menu links */
   .site-header .main-nav a {
     color: #fff          !important;
     padding: 0.75rem 1rem !important;
@@ -1046,7 +1050,7 @@ form button:hover {
     font-weight: 600     !important;
   }
 
-  /* ─── Keep captions below images in your carousel ─── */
+  /* Keep captions below images in carousel and gallery */
   .carousel-item figure,
   .gallery-item figure {
     position: static    !important;
@@ -1054,9 +1058,9 @@ form button:hover {
   }
   .carousel-item img,
   .gallery-item img {
-    display: block !important;
-    width: 100%       !important;
-    height: auto      !important;
+    display: block      !important;
+    width: 100%         !important;
+    height: auto        !important;
   }
   .carousel-caption,
   .carousel-item figcaption,
@@ -1073,5 +1077,3 @@ form button:hover {
     width: 100%           !important;
   }
 }
-
-
