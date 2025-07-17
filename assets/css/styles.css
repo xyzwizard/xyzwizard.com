@@ -6,32 +6,96 @@ html, body {
   overflow-x: hidden;
 }
 
-/* Mobile nav: hide the full menu, show the toggle */
-@media only screen and (max-width: 1368px) {
-  .site-header .main-nav {
-    display: none;
-  }
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+body {
+  font-family: 'Open Sans', Arial, sans-serif;
+  overflow-x: hidden; /* prevent horizontal pan */
+}
+
+/* === Responsive Tables ===
+   Wrap your <table> in <div class="table-responsive"> ... </div> */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 2rem;
+}
+.table-responsive table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.table-responsive th,
+.table-responsive td {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+/* === Mobile Navigation Tweak === */
+.site-header {
+  position: relative;
+  z-index: 1000;
+}
+@media only screen and (max-width: 1440px) {
   .site-header .nav-toggle {
     display: inline-block;
   }
-
-  /* When `.open` is on the header, show the menu vertically */
-  .site-header.open .main-nav {
-    display: block;
+  .site-header .main-nav {
+    display: none;
     position: absolute;
-    top: 100%;
+    top: calc(100% + 0);
     left: 0;
     right: 0;
-    background: #fff;       /* or your header bg */
+    background: #0057b8;  /* match blue header */
     padding: 1rem 0;
     text-align: center;
   }
-  .site-header.open .main-nav ul {
-    list-style: none;
-    margin: 0; padding: 0;
+  .site-header.open .main-nav {
+    display: block;
   }
-  .site-header.open .main-nav li {
+  .site-header .main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .site-header .main-nav li {
     margin: 0.5rem 0;
+  }
+  .site-header .main-nav a {
+    color: #fff;
+    font-weight: 600;
+  }
+}
+
+/* === Carousel / Gallery Caption Below Image === */
+.carousel-item figure,
+.gallery-item figure {
+  position: static !important;
+  overflow: visible !important;
+}
+.carousel-item img,
+.gallery-item img {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+}
+.carousel-item figcaption,
+.gallery-item figcaption {
+  position: static !important;
+  background: transparent !important;
+  color: #333 !important;
+  margin-top: 0.5rem !important;
+  padding: 0 !important;
+  text-align: center !important;
+  display: block !important;
+}
+
+/* === Accordion FAQ Full-width on Mobile === */
+@media only screen and (max-width: 1440px) {
+  .faq-item {
+    display: block !important;
+    width: 100% !important;
   }
 }
 
