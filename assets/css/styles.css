@@ -5,18 +5,6 @@
 .nav-toggle {
   position: relative;
   z-index: 1001;
-}
-
-@media only screen and (max-width: 1440px) {
-  /* start hidden */
-  .site-header .main-nav {
-    display: none !important;
-  }
-  /* show when open */
-  .site-header.open .main-nav {
-    display: block !important;
-  }
-}
 
 /* in assets/css/styles.css, right at the top */
 html, body {
@@ -959,37 +947,6 @@ form button:hover {
   }
 }
 
-/* in assets/css/styles.css, at the bottom */
-.nav-toggle {
-  display: block !important;
-  position: relative;
-  z-index: 1001;         /* sit above the menu */
-  pointer-events: auto;  /* definitely be clickable */
-}
-
-@media (max-width: 1440px) {
-  /* start hidden */
-  .site-header .main-nav {
-    display: none !important;
-  }
-  /* when we click the burger, header gains .open and we reveal it */
-  .site-header.open .main-nav {
-    display: flex !important;
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: #fff;       /* or whatever your header bg is */
-    padding: 1rem 0;
-    text-align: center;
-  }
-  /* nav links styling inside mobile menu */
-  .site-header .main-nav a {
-    color: #333;
-    padding: 0.5rem 0;
-  }
-}
 
 
 
