@@ -701,7 +701,7 @@ form button:hover {
 }
 
 /* ===== Mobile override ===== */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1368px) {
   /* Make sure the figure itself isn’t relatively positioned */
   .gallery-item figure {
     position: static !important;
