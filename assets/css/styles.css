@@ -699,28 +699,20 @@ form button:hover {
     grid-column: 1 / -1;
   }
 }
-
-/* ===== Mobile override ===== */
-@media only screen and (max-width: 1368px) {
-  /* Make sure the figure itself isn’t relatively positioned */
-  .gallery-item figure {
-    position: static !important;
-  }
-  /* Force the image to block‑level so caption pushes below */
-  .gallery-item img {
-    display: block !important;
-    width: 100% !important;
-    height: auto !important;
-  }
-  /* Force the caption below the image */
-  .gallery-item figcaption {
-    position: static !important;
-    background: transparent !important;
-    color: #333 !important;
-    padding: 0.75rem !important;
-    margin-top: 0.5rem !important;
-    text-align: center !important;
-  }
+/* Force carousel captions below the image */
+.carousel-item figure {
+  position: static !important;    /* cancel any absolute positioning */
 }
-
-
+.carousel-item img {
+  display: block;                 /* so caption sits on its own line */
+  width: 100%;
+  height: auto;
+}
+.carousel-item figcaption {
+  position: static !important;
+  background: transparent !important;
+  color: #333 !important;
+  margin-top: 0.5rem;
+  padding: 0;                     /* remove any overlay padding */
+  text-align: center;             /* or left, as you prefer */
+}
