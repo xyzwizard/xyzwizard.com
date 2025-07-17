@@ -1,14 +1,20 @@
 // main.js: site-wide JavaScript for XYZ Wizard
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Mobile navigation toggle
-  const navToggle = document.querySelector('.nav-toggle');
-  const navList = document.querySelector('.main-nav ul');
+  const header = document.querySelector('.site-header');
+  const toggleBtn = document.querySelector('.nav-toggle');
 
-  if (navToggle && navList) {
-    navToggle.addEventListener('click', () => {
-      navList.classList.toggle('open');
-    });
+  if (!header || !toggleBtn) return;
+
+  // Ensure the toggle button stays on top of the menu
+  toggleBtn.style.position = 'relative';
+  toggleBtn.style.zIndex = '1001';
+
+  toggleBtn.addEventListener('click', () => {
+    header.classList.toggle('open');
+  });
+});
+
 
     // Close mobile nav when clicking outside
     document.addEventListener('click', (e) => {
