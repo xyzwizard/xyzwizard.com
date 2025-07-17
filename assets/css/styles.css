@@ -1008,3 +1008,70 @@ form button:hover {
   }
 }
 
+/* ─── Sliding Mobile Nav & Caption Override (≤1440px) ─── */
+@media only screen and (max-width: 1440px) {
+  /* 1️⃣ Always keep the hamburger on top and clickable */
+  .nav-toggle {
+    display: block !important;
+    position: relative !important;
+    z-index: 1001 !important;
+  }
+
+  /* 2️⃣ Slide the nav offscreen by default */
+  .site-header .main-nav {
+    display: flex !important;              /* use flex so links stack nicely */
+    flex-direction: column !important;
+    position: fixed   !important;
+    top: 0             !important;
+    left: -100%       !important;
+    width: 75%        !important;
+    max-width: 300px  !important;
+    height: 100%      !important;
+    background: #0057b8 !important;        /* match your header blue */
+    padding-top: 3rem !important;          /* push links below header */
+    overflow-y: auto !important;
+    transition: left 0.3s ease !important; /* animate the slide */
+  }
+
+  /* 3️⃣ Slide it back in when .open is toggled */
+  .site-header.open .main-nav {
+    left: 0 !important;
+  }
+
+  /* 4️⃣ Style the mobile menu links */
+  .site-header .main-nav a {
+    color: #fff          !important;
+    padding: 0.75rem 1rem !important;
+    text-decoration: none !important;
+    font-weight: 600     !important;
+  }
+
+  /* ─── Keep captions below images in your carousel ─── */
+  .carousel-item figure,
+  .gallery-item figure {
+    position: static    !important;
+    overflow: visible   !important;
+  }
+  .carousel-item img,
+  .gallery-item img {
+    display: block !important;
+    width: 100%       !important;
+    height: auto      !important;
+  }
+  .carousel-caption,
+  .carousel-item figcaption,
+  .gallery-item figcaption {
+    position: static      !important;
+    bottom: auto          !important;
+    transform: none       !important;
+    background: transparent !important;
+    color: #333           !important;
+    margin-top: 0.5rem    !important;
+    padding: 0            !important;
+    text-align: center    !important;
+    display: block        !important;
+    width: 100%           !important;
+  }
+}
+
+
