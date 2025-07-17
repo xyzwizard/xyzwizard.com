@@ -764,12 +764,21 @@ form button:hover {
 }
 
 /* Stack each FAQ in its own block, with space */
-/* Accordion FAQ styles */
-.faq-item {
-  border-bottom: 1px solid #ddd;
-  padding: 1rem 0;
+/* === FAQ Accordion CSS === */
+
+/* Hide answers by default */
+.faq-answer {
+  display: none;
+  padding-top: 0.75rem;
+  line-height: 1.6;
 }
 
+/* When its parent .faq-item has .open, show the answer */
+.faq-item.open .faq-answer {
+  display: block !important;
+}
+
+/* Style the question button */
 .faq-question {
   background: none;
   border: none;
@@ -783,22 +792,8 @@ form button:hover {
   align-items: center;
 }
 
-.faq-question .faq-icon {
+/* Icon rotates when open */
+.faq-item.open .faq-question .faq-icon {
+  transform: rotate(45deg);
   transition: transform 0.2s ease;
 }
-
-.faq-answer {
-  display: none;
-  padding-top: 0.75rem;
-  line-height: 1.6;
-}
-
-/* When open, show the answer and rotate the icon */
-.faq-item.open .faq-answer {
-  display: block;
-}
-
-.faq-item.open .faq-question .faq-icon {
-  transform: rotate(45deg); /* turns '+' into '×' style */
-}
-
