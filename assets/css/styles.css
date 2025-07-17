@@ -642,4 +642,25 @@ form button:hover {
   display: flex;
 }
 
+/* === Dependent dropdowns styling === */
+.quote-form label {
+  display: block;
+  margin-bottom: 1.25rem;
+}
+
+.quote-form select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+/* disabled selects appear grayed out */
+.quote-form select:disabled {
+  background-color: #f9f9f9;
+  color: #888;
+}
+
 
