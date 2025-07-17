@@ -643,24 +643,61 @@ form button:hover {
 }
 
 /* === Dependent dropdowns styling === */
+/* === Form Field Alignment Enhancements === */
+/*Added 7/17/2025 */
+
+/* Ensure each label/input pair is a full-width block with consistent spacing */
 .quote-form label {
   display: block;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem; /* Increase space between fields */
 }
 
-.quote-form select {
-  width: 100%;
+/* Apply to all form controls for consistent sizing */
+.quote-form label input,
+.quote-form label textarea,
+.quote-form label select {
+  margin-top: 0.5rem;
+  width: 100%;           /* Full width to align inputs */
+  box-sizing: border-box;
   padding: 0.5rem;
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 1rem;
+  font-family: var(--font-base);
+}
+
+/* Increase textarea height for 'Additional Details' */
+.quote-form label textarea {
+  min-height: 8rem;
+}
+
+/* Ensure file input sits below its label text */
+.quote-form label input[type="file"] {
+  display: block;
   margin-top: 0.5rem;
 }
 
-/* disabled selects appear grayed out */
-.quote-form select:disabled {
-  background-color: #f9f9f9;
-  color: #888;
+/* Add space above submit button */
+.quote-form .submit-btn {
+  display: inline-block;
+  margin-top: 2rem;
+}
+
+/* Media query for two-column layout on larger screens */
+@media (min-width: 768px) {
+  .quote-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  /* Make the submit button span both columns */
+  .quote-form .submit-btn {
+    grid-column: 1 / -1;
+  }
+  /* Textarea should span both columns */
+  .quote-form label textarea {
+    grid-column: 1 / -1;
+  }
 }
 
 
