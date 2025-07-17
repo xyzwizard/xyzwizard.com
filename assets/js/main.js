@@ -3,13 +3,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   const header = document.querySelector('.site-header');
   const toggleBtn = document.querySelector('.nav-toggle');
-
   if (!header || !toggleBtn) return;
-
-  // Ensure the toggle button stays on top of the menu
-  toggleBtn.style.position = 'relative';
-  toggleBtn.style.zIndex = '1001';
-
   toggleBtn.addEventListener('click', () => {
     header.classList.toggle('open');
   });
