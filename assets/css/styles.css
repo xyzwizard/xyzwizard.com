@@ -5,6 +5,8 @@
 .nav-toggle {
   position: relative;
   z-index: 1001;
+}
+
 
 /* in assets/css/styles.css, right at the top */
 html, body {
@@ -348,7 +350,7 @@ form button:hover {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 1440px) {
   .nav-toggle {
     display: block;
   }
@@ -787,7 +789,7 @@ form button:hover {
 }
 
 /* Media query for two-column layout on larger screens */
-@media (min-width: 768px) {
+@media (min-width: 1440px) {
   .quote-form {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -946,7 +948,4 @@ form button:hover {
     width: 100% !important;
   }
 }
-
-
-
 
