@@ -700,4 +700,25 @@ form button:hover {
   }
 }
 
+/* ===== Mobile override ===== */
+@media (max-width: 768px) {
+  .gallery-item figure {
+    /* switch to normal document flow */
+    position: static;
+  }
+  .gallery-item img {
+    /* ensure block-level so caption sits below */
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .gallery-item figcaption {
+    /* remove absolute overlay */
+    position: static;
+    background: transparent;
+    color: #333;      /* switch to dark text on light bg */
+    padding: 0.75rem 0; /* vertical spacing */
+    text-align: center;
+  }
+}
 
