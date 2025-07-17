@@ -57,6 +57,36 @@
         <input type="tel" name="phone">
       </label>
 
+      <label for="material">
+        Material:
+        <select id="material" name="material" required>
+          <option value="">– Select Material –</option>
+          <option value="PLA">PLA</option>
+          <option value="ASA">ASA</option>
+          <option value="PETG">PETG</option>
+          <option value="Polycarbonate">Polycarbonate</option>
+          <option value="Nylon">Nylon</option>
+          <option value="Resin">ABS‑Like Resin</option>
+        </select>
+      </label>
+      
+      <!-- Color select (populated dynamically) -->
+      <label for="color">
+        Color:
+        <select id="color" name="color" required disabled>
+          <option value="">– Select Material First –</option>
+        </select>
+      </label>
+      
+      <!-- Layer height select (populated dynamically) -->
+      <label for="layerHeight">
+        Layer Height:
+        <select id="layerHeight" name="layerHeight" required disabled>
+          <option value="">– Select Material First –</option>
+        </select>
+      </label>
+
+      
       <label>
         3D Files (STL, OBJ, 3MF, AMF, STEP, ZIP, RAR)
         <input type="file" name="model" accept=".stl,.obj,.3mf,.amf,.step,.zip,.rar,.tar.gz" required>
@@ -87,5 +117,6 @@
   
   <script src="assets/js/main.js"></script>
   <script src="assets/js/api.js"></script>
+  <script src="assets/js/form-dropdowns.js"></script>
 </body>
 </html>
