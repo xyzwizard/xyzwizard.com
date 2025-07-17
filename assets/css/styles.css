@@ -701,24 +701,26 @@ form button:hover {
 }
 
 /* ===== Mobile override ===== */
-@media (max-width: 768px) {
+@media only screen and (max-width: 768px) {
+  /* Make sure the figure itself isn’t relatively positioned */
   .gallery-item figure {
-    /* switch to normal document flow */
-    position: static;
+    position: static !important;
   }
+  /* Force the image to block‑level so caption pushes below */
   .gallery-item img {
-    /* ensure block-level so caption sits below */
-    display: block;
-    width: 100%;
-    height: auto;
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
   }
+  /* Force the caption below the image */
   .gallery-item figcaption {
-    /* remove absolute overlay */
-    position: static;
-    background: transparent;
-    color: #333;      /* switch to dark text on light bg */
-    padding: 0.75rem 0; /* vertical spacing */
-    text-align: center;
+    position: static !important;
+    background: transparent !important;
+    color: #333 !important;
+    padding: 0.75rem !important;
+    margin-top: 0.5rem !important;
+    text-align: center !important;
   }
 }
+
 
