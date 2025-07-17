@@ -920,3 +920,29 @@ form button:hover {
     background: none !important;
   }
 }
+/* ==== Move carousel captions below images on small screens ==== */
+@media only screen and (max-width: 1440px) {
+  .carousel-item {
+    position: static !important;
+    overflow: visible !important;
+  }
+
+  .carousel-item img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+  
+  /* Most carousels use `.carousel-caption`—override it */
+  .carousel-caption {
+    position: static !important;
+    bottom: auto !important;
+    transform: none !important;
+    background: transparent !important;
+    color: #333 !important;
+    padding: 0.75rem 0 !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+}
+
