@@ -912,3 +912,11 @@ form button:hover {
   width: 100% !important;
   margin-bottom: 1.5rem;  /* space between FAQs */
 }
+
+@media only screen and (max-width: 1440px) {
+  /* Remove the bright blue background from the expanded menu */
+  .site-header .main-nav,
+  .site-header.open .main-nav {
+    background: none !important;
+  }
+}
