@@ -797,3 +797,9 @@ form button:hover {
   transform: rotate(45deg);
   transition: transform 0.2s ease;
 }
+
+.faq-item {
+  display: block !important;
+  width: 100% !important;
+  margin-bottom: 1.5rem;  /* space between FAQs */
+}
