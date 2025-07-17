@@ -700,6 +700,12 @@ form button:hover {
   }
 }
 
+/* If you only want to affect the Pricing page’s h1, scope it more narrowly: */
+.pricing h1 {
+  font-size: 3rem;
+  margin-bottom: 0.75rem;
+}
+
 /* Center the entire pricing table */
 .pricing-table {
   width: 100%;
