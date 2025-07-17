@@ -39,3 +39,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+// at the bottom of main.js
+document.querySelector('.nav-toggle').addEventListener('click', () => {
+  document.querySelector('.site-header').classList.toggle('open');
+});
+
