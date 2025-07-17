@@ -7,12 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
   toggleBtn.addEventListener('click', () => header.classList.toggle('open'));
 });
 
- // Close mobile nav when clicking outside
-document.addEventListener('click', (e) => {
-  if (!navList.contains(e.target) && !navToggle.contains(e.target)) {
-     navList.classList.remove('open');
-   }
- });
 
 
   // Highlight active nav link based on current URL
