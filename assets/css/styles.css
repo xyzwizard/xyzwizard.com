@@ -699,6 +699,24 @@ form button:hover {
     grid-column: 1 / -1;
   }
 }
+
+/* Center the entire pricing table */
+.pricing-table {
+  margin: 0 auto;        /* center horizontally */
+}
+
+/* Center the FAQ section’s content */
+.faqs {
+  text-align: center;    /* center the headings and inline-block children */
+}
+
+/* Make each FAQ item an inline‑block so it sits centered but its text stays left‑aligned */
+.faq-item {
+  display: inline-block;
+  text-align: left;
+  max-width: 800px;      /* or whatever width you prefer */
+  margin: 1rem;          /* spacing between items */
+}
 /* Force carousel captions below the image */
 /* Carousel Caption Below Image Override */
 .carousel-item figure,
