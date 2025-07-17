@@ -707,6 +707,11 @@ form button:hover {
   margin: 0 auto 2rem;    /* center + bottom gap */
 }
 
+/* Center table section titles */
+.pricing h2,
+.faqs h2 {
+  text-align: center;
+}
 /* Add generous cell padding & light borders */
 .pricing-table th,
 .pricing-table td {
