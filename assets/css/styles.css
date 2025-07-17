@@ -7,6 +7,17 @@
   z-index: 1001;
 }
 
+@media only screen and (max-width: 1440px) {
+  /* start hidden */
+  .site-header .main-nav {
+    display: none !important;
+  }
+  /* show when open */
+  .site-header.open .main-nav {
+    display: block !important;
+  }
+}
+
 /* in assets/css/styles.css, right at the top */
 html, body {
   overflow-x: hidden;
