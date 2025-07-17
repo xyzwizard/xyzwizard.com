@@ -621,7 +621,7 @@ form button:hover {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 1440px) {
   .nav-toggle {
     display: block;
   }
