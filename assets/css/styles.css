@@ -764,22 +764,41 @@ form button:hover {
 }
 
 /* Stack each FAQ in its own block, with space */
+/* Accordion FAQ styles */
 .faq-item {
-  background: #f9f9f9;
-  border-radius: 4px;
-  padding: 1rem;
-  margin-bottom: 1rem;
+  border-bottom: 1px solid #ddd;
+  padding: 1rem 0;
 }
 
-/* FAQ question bold and with a bit of spacing */
-.faq-item h3 {
-  margin-top: 0;
-  margin-bottom: 0.5rem;
+.faq-question {
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* FAQ answer a comfortable line‑height */
-.faq-item p {
+.faq-question .faq-icon {
+  transition: transform 0.2s ease;
+}
+
+.faq-answer {
+  display: none;
+  padding-top: 0.75rem;
   line-height: 1.6;
-  margin: 0;
+}
+
+/* When open, show the answer and rotate the icon */
+.faq-item.open .faq-answer {
+  display: block;
+}
+
+.faq-item.open .faq-question .faq-icon {
+  transform: rotate(45deg); /* turns '+' into '×' style */
 }
 
