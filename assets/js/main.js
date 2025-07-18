@@ -1,21 +1,20 @@
 // main.js: site-wide JavaScript for XYZ Wizard
 
 document.addEventListener('DOMContentLoaded', () => {
-  const header = document.querySelector('.site-header');
+  const header    = document.querySelector('.site-header');
   const toggleBtn = document.querySelector('.nav-toggle');
 
   if (!header || !toggleBtn) return;
 
-  // Ensure the toggle button is on top of other elements
+  // Make sure the button is always clickable
   toggleBtn.style.position = 'relative';
-  toggleBtn.style.zIndex = '1100';
+  toggleBtn.style.zIndex   = '1100';
 
-  // Toggle the 'open' class on the header to show/hide the mobile menu
+  // Single listener that ALWAYS toggles .open on the header
   toggleBtn.addEventListener('click', () => {
     header.classList.toggle('open');
   });
 });
-
 
 
   // Highlight active nav link based on current URL
@@ -40,8 +39,4 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// at the bottom of main.js
-document.querySelector('.nav-toggle').addEventListener('click', () => {
-  document.querySelector('.site-header').classList.toggle('open');
-});
 
