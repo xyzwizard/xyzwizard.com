@@ -1,10 +1,19 @@
 // main.js: site-wide JavaScript for XYZ Wizard
 
 document.addEventListener('DOMContentLoaded', () => {
-  const header    = document.querySelector('.site-header');
+  const header = document.querySelector('.site-header');
   const toggleBtn = document.querySelector('.nav-toggle');
+
   if (!header || !toggleBtn) return;
-  toggleBtn.addEventListener('click', () => header.classList.toggle('open'));
+
+  // Ensure the toggle button is on top of other elements
+  toggleBtn.style.position = 'relative';
+  toggleBtn.style.zIndex = '1100';
+
+  // Toggle the 'open' class on the header to show/hide the mobile menu
+  toggleBtn.addEventListener('click', () => {
+    header.classList.toggle('open');
+  });
 });
 
 
