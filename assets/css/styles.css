@@ -7,13 +7,10 @@
   z-index: 1001;
 }
 
-
 /* in assets/css/styles.css, right at the top */
 html, body {
   overflow-x: hidden;
 }
-
-
 
 body {
   font-family: 'Open Sans', Arial, sans-serif;
@@ -39,41 +36,6 @@ body {
   text-align: center;
 }
 
-/* === Mobile Navigation Tweak === */
-.site-header {
-  position: relative;
-  z-index: 1000;
-}
-@media only screen and (max-width: 1440px) {
-  .site-header .nav-toggle {
-    display: inline-block;
-  }
-  .site-header .main-nav {
-    display: none;
-    position: absolute;
-    top: calc(100% + 0);
-    left: 0;
-    right: 0;
-    background: #0057b8;  /* match blue header */
-    padding: 1rem 0;
-    text-align: center;
-  }
-  .site-header.open .main-nav {
-    display: block;
-  }
-  .site-header .main-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  .site-header .main-nav li {
-    margin: 0.5rem 0;
-  }
-  .site-header .main-nav a {
-    color: #fff;
-    font-weight: 600;
-  }
-}
 
 /* === Carousel / Gallery Caption Below Image === */
 .carousel-item figure,
@@ -923,15 +885,6 @@ form button:hover {
 
 @media only screen and (max-width: 1440px) {
   /* Always keep the hamburger on top and clickable */
-  .nav-toggle {
-    display: block !important;
-    position: fixed !important;
-    top: 1rem !important;
-    right: 1rem !important;
-    z-index: 1100 !important;
-    pointer-events: auto !important;
-  }
-
   /* Slide the nav offscreen by default and disable its pointer events */
   .site-header .main-nav {
     display: flex !important;
@@ -998,14 +951,12 @@ form button:hover {
     position: relative !important;
     z-index: 9999 !important;
   }
-
   /* Push the quote button behind it */
   .btn-secondary {
     position: relative !important;
     z-index: 1000 !important;
   }
 }
-
 @media only screen and (max-width: 1440px) {
   /* Override the UL positioning so the menu links are visible */
   .site-header .main-nav ul {
