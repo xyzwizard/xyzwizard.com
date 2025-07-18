@@ -921,93 +921,6 @@ form button:hover {
 }
 
 
-  }
-}
-/* ==== Move carousel captions below images on small screens ==== */
-@media only screen and (max-width: 1440px) {
-  .carousel-item {
-    position: static !important;
-    overflow: visible !important;
-  }
-
-  .carousel-item img {
-    display: block !important;
-    width: 100% !important;
-    height: auto !important;
-  }
-  
-  /* Most carousels use `.carousel-caption`—override it */
-  .carousel-caption {
-    position: static !important;
-    bottom: auto !important;
-    transform: none !important;
-    background: transparent !important;
-    color: #333 !important;
-    padding: 0.75rem 0 !important;
-    text-align: center !important;
-    width: 100% !important;
-  }
-}
-
-/* ─── Mobile Hamburger & Caption Overrides (≤1440px) ─── */
-@media only screen and (max-width: 1440px) {
-  /* 1) Hamburger always visible & on top */
-  .nav-toggle {
-    display: block !important;
-    position: relative !important;
-    z-index: 1001 !important;
-  }
-
-  /* 2) Main menu hidden by default */
-  .site-header .main-nav {
-    display: none !important;
-  }
-  /*    ...but shown as a vertical list when header has .open */
-  .site-header.open .main-nav {
-    display: flex !important;
-    flex-direction: column;
-    position: absolute !important;
-    top: 100% !important;
-    left: 0 !important;
-    right: 0 !important;
-    background: none !important;
-    padding: 1rem 0 !important;
-    text-align: center !important;
-  }
-  .site-header.open .main-nav a {
-    color: #fff !important;
-    padding: 0.5rem 0 !important;
-  }
-
-  /* 3) Move all captions below images */
-  .carousel-item figure,
-  .gallery-item figure {
-    position: static !important;
-    overflow: visible !important;
-  }
-  .carousel-item img,
-  .gallery-item img {
-    display: block !important;
-    width: 100% !important;
-    height: auto !important;
-  }
-  /* override both `.carousel-caption` and `<figcaption>` */
-  .carousel-caption,
-  .carousel-item figcaption,
-  .gallery-item figcaption {
-    position: static !important;
-    bottom: auto !important;
-    transform: none !important;
-    background: transparent !important;
-    color: #333 !important;
-    margin-top: 0.5rem !important;
-    padding: 0 !important;
-    text-align: center !important;
-    display: block !important;
-    width: 100% !important;
-  }
-}
-
 @media only screen and (max-width: 1440px) {
   /* Always keep the hamburger on top and clickable */
   .nav-toggle {
@@ -1077,3 +990,19 @@ form button:hover {
     width: 100%           !important;
   }
 }
+
+/* Ensure hamburger always floats above the quote button on mobile */
+@media only screen and (max-width: 1440px) {
+  /* Give the hamburger extreme priority */
+  .nav-toggle {
+    position: relative !important;
+    z-index: 9999 !important;
+  }
+
+  /* Push the quote button behind it */
+  .btn-secondary {
+    position: relative !important;
+    z-index: 1000 !important;
+  }
+}
+
