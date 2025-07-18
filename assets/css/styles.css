@@ -1006,3 +1006,17 @@ form button:hover {
   }
 }
 
+@media only screen and (max-width: 1440px) {
+  /* Override the UL positioning so the menu links are visible */
+  .site-header .main-nav ul {
+    position: static !important;
+    transform: none !important;
+    top: auto !important;
+    right: auto !important;
+    background: none !important;
+    width: 100% !important;
+    flex-direction: column !important;
+    display: flex !important;
+  }
+}
+
